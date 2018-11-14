@@ -4,7 +4,8 @@
   "description": "A web server api built with nodeJs",
   "main": "server.js",
   "scripts": {
-    "test": "mocha server.js"
+    "test": "mocha server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
