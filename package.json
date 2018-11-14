@@ -1,0 +1,28 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "description": "A web server api built with nodeJs",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phavor/web-server.git"
+  },
+  "keywords": [
+    "web-server",
+    "node",
+    "express",
+    "api"
+  ],
+  "author": "Fayvor George",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phavor/web-server/issues"
+  },
+  "homepage": "https://github.com/phavor/web-server#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
