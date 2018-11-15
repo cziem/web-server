@@ -40,7 +40,6 @@ hbs.registerHelper('screamIt', (text) => {
 
 // basic routes
 app.get('/', (req, res) => {
-  // res.send('<h1>Hello Express!</h1>')
   res.render('home.hbs', {
     pageTitle: 'Home Page',
     welcomeMsg: 'Welcome to the web-server home',
