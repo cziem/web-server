@@ -53,6 +53,13 @@ app.get('/about', (req, res) => {
   })
 })
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    projectMsg: 'Take a look at some of the amazing projects I\'ve done'
+  })
+})
+
 app.get('/bad', (req, res) => {
   res.send({
     error: 'Your request was bad'
