@@ -5,15 +5,19 @@ const fs = require('fs')
 const app = express()
 const port = process.env.PORT || 3000
 
+const homeRoutes = require('./routes/homeRoute')
+const aboutRoute = require('./routes/aboutRoute')
+const contactRoute = require('./routes/contactRoute')
+
 hbs.registerPartials(__dirname + '/views/partials')
-app.set('voew engine', 'hbs')
+app.set('view engine', 'hbs')
 
 // middlewares
 app.use((req, res, next) => {
   let now = new Date().toString()
   let log = `${now}: ${req.method} : ${req.url}`
 
-  console.log(log)
+  // console.log(log)
   fs.appendFile('server.log', log + '\n', (err) => {
     if (err) {
       console.log('Unable to append to server.log')
@@ -34,31 +38,10 @@ hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear()
 })
 
-hbs.registerHelper('screamIt', (text) => {
-  return text.toUpperCase()
-})
-
 // basic routes
-app.get('/', (req, res) => {
-  // res.send('<h1>Hello Express!</h1>')
-  res.render('home.hbs', {
-    pageTitle: 'Home Page',
-    welcomeMsg: 'Welcome to the web-server home',
-  })
-})
-
-app.get('/about', (req, res) => {
-  res.render('about.hbs', {
-    pageTitle: 'About Page',
-  })
-})
-
-app.get('/projects', (req, res) => {
-  res.render('projects.hbs', {
-    pageTitle: 'Projects Page',
-    projectMsg: 'Take a look at some of the amazing projects I\'ve done'
-  })
-})
+app.use('/', homeRoutes)
+app.use('/about', aboutRoute)
+app.use('/contact', contactRoute)
 
 app.get('/bad', (req, res) => {
   res.send({
