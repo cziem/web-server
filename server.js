@@ -5,6 +5,10 @@ const fs = require('fs')
 const app = express()
 const port = process.env.PORT || 3000
 
+const homeRoutes = require('./routes/homeRoute')
+const aboutRoute = require('./routes/aboutRoute')
+const contactRoute = require('./routes/contactRoute')
+
 hbs.registerPartials(__dirname + '/views/partials')
 app.set('view engine', 'hbs')
 
@@ -34,28 +38,10 @@ hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear()
 })
 
-
 // basic routes
-app.get('/', (req, res) => {
-  res.render('default.hbs', {
-    logo: 'serverify',
-    pageTitle: 'welcome to serverify',
-    welcomeMsg: 'Welcome to the web-server home',
-  })
-})
-
-app.get('/about', (req, res) => {
-  res.render('about.hbs', {
-    pageTitle: 'About Page',
-  })
-})
-
-app.get('/projects', (req, res) => {
-  res.render('projects.hbs', {
-    pageTitle: 'Projects Page',
-    projectMsg: 'Take a look at some of the amazing projects I\'ve done'
-  })
-})
+app.use('/', homeRoutes)
+app.use('/about', aboutRoute)
+app.use('/contact', contactRoute)
 
 app.get('/bad', (req, res) => {
   res.send({
