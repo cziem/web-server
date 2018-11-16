@@ -6,14 +6,14 @@ const app = express()
 const port = process.env.PORT || 3000
 
 hbs.registerPartials(__dirname + '/views/partials')
-app.set('voew engine', 'hbs')
+app.set('view engine', 'hbs')
 
 // middlewares
 app.use((req, res, next) => {
   let now = new Date().toString()
   let log = `${now}: ${req.method} : ${req.url}`
 
-  console.log(log)
+  // console.log(log)
   fs.appendFile('server.log', log + '\n', (err) => {
     if (err) {
       console.log('Unable to append to server.log')
@@ -34,14 +34,12 @@ hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear()
 })
 
-hbs.registerHelper('screamIt', (text) => {
-  return text.toUpperCase()
-})
 
 // basic routes
 app.get('/', (req, res) => {
-  res.render('home.hbs', {
-    pageTitle: 'Home Page',
+  res.render('default.hbs', {
+    logo: 'serverify',
+    pageTitle: 'welcome to serverify',
     welcomeMsg: 'Welcome to the web-server home',
   })
 })
