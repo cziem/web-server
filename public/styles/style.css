@@ -1,3 +1,7 @@
 #navbarNav {
   justify-content: flex-end;
 }
+
+.footer-copyright {
+  color: #e2e2e2;
+}
