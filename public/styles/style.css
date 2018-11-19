@@ -5,3 +5,10 @@
 .footer-copyright {
   color: #e2e2e2;
 }
+
+.jum_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+}
