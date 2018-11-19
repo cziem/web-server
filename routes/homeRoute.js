@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
   res.render('home', {
     logo: 'serverify',
     welcomeMsg: 'Severify',
+    lead: 'Hey there! Let\'s get you started with'
   })
 })
 

@@ -6,7 +6,8 @@ router.get('/', (req, res) => {
   res.render('contact', {
     logo: 'serverify',
     pageTitle: 'Contact Page',
-    contactMsg: 'Let\'s get in touch with you'
+    contactMsg: 'Let\'s get in touch with you',
+    lead: 'We\'d love to hear from you.'
   })
 })
 
