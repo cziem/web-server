@@ -1,43 +1,14 @@
-header {
-  background: #39112d;
+#navbarNav {
+  justify-content: flex-end;
 }
 
-nav {
-  justify-content: flex-end !important;
+.footer-copyright {
+  color: #e2e2e2;
 }
 
-nav a:first-child {
-  position: relative;
-  right: 75%;
-}
-
-nav a {
-  color: #fdfdfd;
-}
-
-nav a:hover {
-  color: #bebcbc;
-}
-
-.navbar-brand{
-  font-family: cursive;
-  font-style: italic;
-}
-
-@media all and (max-width: 767.98px) {
-  nav a:first-child {
-    right: 45.5%;
-  }
-}
-
-
-
-/* Footer styling */
-footer {
-  background: #39112d;
-  color: #c2c2c2;
-  height: 8rem;
+.jum_wrap {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 30rem;
 }
